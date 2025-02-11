@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    /* spacing */
+    --space-100: 0.5rem;
+    --space-150: 0.75rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-1600: 8rem;
+    /* color */
+    --gray-900: #2A4144;
+    --gray-500: #86A2A5;
+    --white: #FFFFFF;
+    --green-500: #0C7D69;
+    --green-200: #E0F1E8;
+    --red: #D73C3C;
+    /* typography */
+    --heading: bold 1rem/1 "Karla";
+    --body-medium-bold: bold 1.125rem/1.5 "Karla";
+    --body-medium: normal 1.125rem/1.5 "Karla";
+    --body-small: normal 1rem/1.5 "Karla";
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
