@@ -50,23 +50,49 @@ h6 {
     --green-200: #E0F1E8;
     --red: #D73C3C;
     /* typography */
-    --heading: bold 1rem/1 "Karla";
+    --heading: bold 2rem/1 "Karla";
     --body-medium-bold: bold 1.125rem/1.5 "Karla";
     --body-medium: normal 1.125rem/1.5 "Karla";
     --body-small: normal 1rem/1.5 "Karla";
 }
 
 html {
-    min-height: 100%;
+    height: 100%;
     background: var(--green-200);
 }
 
 body {
-    min-height: 100%;
+    height: 100%;
 }
 
 main {
-    min-height: 100%;
+    height: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin-block: auto;
+    background: var(--white);
+    max-width: 690px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1 {
+    font: var(--heading);
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 footer {
