@@ -95,6 +95,18 @@ form {
     gap: 1.5rem;
 }
 
+.fullname {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 footer {
     position: fixed;
     left: 0;
