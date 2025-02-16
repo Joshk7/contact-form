@@ -43,12 +43,12 @@ h6 {
     --space-500: 2.5rem;
     --space-1600: 8rem;
     /* color */
-    --gray-900: #2A4144;
-    --gray-500: #86A2A5;
-    --white: #FFFFFF;
-    --green-500: #0C7D69;
-    --green-200: #E0F1E8;
-    --red: #D73C3C;
+    --gray-900: #2a4144;
+    --gray-500: #86a2a5;
+    --white: #ffffff;
+    --green-500: #0c7d69;
+    --green-200: #e0f1e8;
+    --red: #d73c3c;
     /* typography */
     --heading: bold 2rem/1 "Karla";
     --body-medium-bold: bold 1.125rem/1.5 "Karla";
@@ -95,17 +95,33 @@ form {
     gap: 1.5rem;
 }
 
-.fullname {
-    display: flex;
-    flex-direction: column;
-}
-
 .name {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+}
 
+fieldset {
+    border: none;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+li {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+}
 
 footer {
     position: fixed;
@@ -124,4 +140,14 @@ footer {
 
 .invisible {
     display: none;
+}
+
+.sr {
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }

@@ -36,52 +36,136 @@
             <section>
                 <h1>Contact Us</h1>
                 <form>
-                    <div class="fullname">
-                        <div class="name">
-                            <label class="name__label" for="firstName">First Name</label>
-                            <input id="firstName" type="text" />
-                            <span>This field is required</span>
+                    <div class="name">
+                        <div class="column">
+                            <label class="name__label" for="given-name"
+                                >First Name
+                                <span class="required" aria-hidden="true"
+                                    >*</span
+                                >
+                                <span class="sr">required</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="given-name"
+                                name="given-name"
+                                autocomplete="given-name"
+                                aria-invalid="false"
+                                aria-describedby="error_given"
+                            />
+                            <span class="error invisible" id="error_given"
+                                >This field is required</span
+                            >
                         </div>
-                        <div class="name">
-                            <label class="name__label" for="lastName">Last Name</label>
-                            <input id="lastName" type="text" />
-                            <span>This field is required</span>
+                        <div class="column">
+                            <label class="name__label" for="family-name"
+                                >Last Name
+                                <span class="required" aria-hidden="true"
+                                    >*</span
+                                >
+                                <span class="sr">required</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="family-name"
+                                name="family-name"
+                                autocomplete="family-name"
+                                aria-invalid="false"
+                                aria-describedby="error_family"
+                            />
+                            <span class="error invisible" id="error_family"
+                                >This field is required</span
+                            >
                         </div>
                     </div>
-                    <div>
-                        <label for="email">Email Address</label>
-                        <input id="email" type="text" />
-                        <span>Please enter a valid email address</span>
-                        <span>This field is required</span>
+                    <div class="column">
+                        <label for="email"
+                            >Email Address
+                            <span class="required" aria-hidden="true">*</span>
+                            <span class="sr">required</span>
+                        </label>
+                        <input
+                            id="email"
+                            type="text"
+                            name="email"
+                            autocomplete="email"
+                            aria-invalid="false"
+                            aria-describedby="error_email"
+                        />
+                        <span class="error invisible" id="error_email"
+                            >Please enter a valid email address</span
+                        >
                     </div>
                     <fieldset>
-                        <legend>Query Type</legend>
+                        <legend>
+                            Query Type
+                            <span class="required" aria-hidden="true">*</span>
+                            <span class="sr">required</span>
+                        </legend>
                         <ul>
                             <li>
-                                <input id="general" type="radio" />
-                                <label for="general">General Enquiry</label>
+                                <label for="general">
+                                    <input
+                                        id="general"
+                                        type="radio"
+                                        name="query"
+                                        aria-invalid="false"
+                                        aria-describedby="error_query"
+                                    />
+                                    General Enquiry
+                                </label>
                             </li>
                             <li>
-                                <input id="support" type="radio" />
-                                <label for="support">Support Request</label>
+                                <label for="support">
+                                    <input
+                                        id="support"
+                                        type="radio"
+                                        name="query"
+                                        aria-invalid="false"
+                                        aria-describedby="error_query"
+                                    />
+                                    Support Request
+                                </label>
                             </li>
                         </ul>
-                        <span>Please select a query type</span>
+                        <span class="error invisible" id="error_query"
+                            >Please select a query type</span
+                        >
                     </fieldset>
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message"></textarea>
-                        <span>This field is required</span>
+                    <div class="column">
+                        <label for="message"
+                            >Message
+                            <span class="required" aria-hidden="true">*</span>
+                            <span class="sr">required</span>
+                        </label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            name="message"
+                            aria-invalid="false"
+                            aria-describedby="error_message"
+                        ></textarea>
+                        <span class="error invisible" id="error_message"
+                            >This field is required</span
+                        >
                     </div>
-                    <div>
-                        <input id="consent" type="checkbox" />
-                        <label for="consent"
-                            >I consent to being contacted by the team</label
-                        >
-                        <span
-                            >To submit this form, please consent to being
-                            contacted</span
-                        >
+                    <div class="column">
+                        <div class="consent">
+                            <input
+                                id="consent"
+                                type="checkbox"
+                                name="consent"
+                                aria-invalid="false"
+                                aria-describedby="error_consent"
+                            />
+                            <label for="consent">
+                                I consent to being contacted by the team
+                            </label>
+                        </div>
+                        <span class="error invisible" id="error_consent">
+                            To submit this form, please consent to being
+                            contacted
+                        </span>
                     </div>
                     <input type="submit" value="Submit" />
                 </form>
