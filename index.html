@@ -102,30 +102,26 @@
                             <span class="required" aria-hidden="true">*</span>
                             <span class="sr">required</span>
                         </legend>
-                        <ul>
-                            <li>
-                                <label for="general">
-                                    <input
-                                        id="general"
-                                        type="radio"
-                                        name="query"
-                                        aria-invalid="false"
-                                        aria-describedby="error_query"
-                                    />
-                                    General Enquiry
-                                </label>
+                        <ul class="query__list">
+                            <li class="query__list--item">
+                                <input
+                                    id="general"
+                                    type="radio"
+                                    name="query"
+                                    aria-invalid="false"
+                                    aria-describedby="error_query"
+                                />
+                                <label for="general"> General Enquiry </label>
                             </li>
-                            <li>
-                                <label for="support">
-                                    <input
-                                        id="support"
-                                        type="radio"
-                                        name="query"
-                                        aria-invalid="false"
-                                        aria-describedby="error_query"
-                                    />
-                                    Support Request
-                                </label>
+                            <li class="query__list--item">
+                                <input
+                                    id="support"
+                                    type="radio"
+                                    name="query"
+                                    aria-invalid="false"
+                                    aria-describedby="error_query"
+                                />
+                                <label for="support"> Support Request </label>
                             </li>
                         </ul>
                         <span class="error invisible" id="error_query"

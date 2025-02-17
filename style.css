@@ -152,3 +152,10 @@ footer {
     white-space: nowrap;
     width: 1px;
 }
+
+
+@media screen and (min-width: 768px) {
+    section {
+        max-width: 736px;
+    }
+}
