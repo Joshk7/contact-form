@@ -74,6 +74,7 @@ main {
 }
 
 section {
+    width: 100%;
     margin-block: auto;
     background: var(--white);
     max-width: 690px;
