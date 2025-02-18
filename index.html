@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Accessible contact form for general and support queries"
+        />
         <link
             rel="icon"
             type="image/png"
@@ -34,116 +38,140 @@
         </header>
         <main>
             <section>
-                <h1>Contact Us</h1>
                 <form>
-                    <div class="name">
-                        <div class="column">
-                            <label class="name__label" for="given-name"
-                                >First Name
-                                <span class="required" aria-hidden="true"
-                                    >*</span
-                                >
-                                <span class="sr">required</span>
-                            </label>
-                            <input
-                                type="text"
-                                id="given-name"
-                                name="given-name"
-                                autocomplete="given-name"
-                                aria-invalid="false"
-                                aria-describedby="error_given"
-                            />
-                            <span class="error invisible" id="error_given"
-                                >This field is required</span
-                            >
-                        </div>
-                        <div class="column">
-                            <label class="name__label" for="family-name"
-                                >Last Name
-                                <span class="required" aria-hidden="true"
-                                    >*</span
-                                >
-                                <span class="sr">required</span>
-                            </label>
-                            <input
-                                type="text"
-                                id="family-name"
-                                name="family-name"
-                                autocomplete="family-name"
-                                aria-invalid="false"
-                                aria-describedby="error_family"
-                            />
-                            <span class="error invisible" id="error_family"
-                                >This field is required</span
-                            >
-                        </div>
-                    </div>
-                    <div class="column">
-                        <label for="email"
-                            >Email Address
-                            <span class="required" aria-hidden="true">*</span>
-                            <span class="sr">required</span>
-                        </label>
-                        <input
-                            id="email"
-                            type="text"
-                            name="email"
-                            autocomplete="email"
-                            aria-invalid="false"
-                            aria-describedby="error_email"
-                        />
-                        <span class="error invisible" id="error_email"
-                            >Please enter a valid email address</span
-                        >
-                    </div>
-                    <fieldset>
-                        <legend>
-                            Query Type
-                            <span class="required" aria-hidden="true">*</span>
-                            <span class="sr">required</span>
-                        </legend>
-                        <ul class="query__list">
-                            <li class="query__list--item">
+                    <div class="info">
+                        <h1>Contact Us</h1>
+                        <div class="content">
+                            <div class="name">
+                                <div class="column">
+                                    <label class="name__label" for="given-name"
+                                        >First Name
+                                        <span
+                                            class="required"
+                                            aria-hidden="true"
+                                            >*</span
+                                        >
+                                        <span class="sr">required</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="given-name"
+                                        name="given-name"
+                                        autocomplete="given-name"
+                                        aria-invalid="false"
+                                        aria-describedby="error_given"
+                                    />
+                                    <span
+                                        class="error invisible"
+                                        id="error_given"
+                                        >This field is required</span
+                                    >
+                                </div>
+                                <div class="column">
+                                    <label class="name__label" for="family-name"
+                                        >Last Name
+                                        <span
+                                            class="required"
+                                            aria-hidden="true"
+                                            >*</span
+                                        >
+                                        <span class="sr">required</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="family-name"
+                                        name="family-name"
+                                        autocomplete="family-name"
+                                        aria-invalid="false"
+                                        aria-describedby="error_family"
+                                    />
+                                    <span
+                                        class="error invisible"
+                                        id="error_family"
+                                        >This field is required</span
+                                    >
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label for="email"
+                                    >Email Address
+                                    <span class="required" aria-hidden="true"
+                                        >*</span
+                                    >
+                                    <span class="sr">required</span>
+                                </label>
                                 <input
-                                    id="general"
-                                    type="radio"
-                                    name="query"
+                                    id="email"
+                                    type="text"
+                                    name="email"
+                                    autocomplete="email"
                                     aria-invalid="false"
-                                    aria-describedby="error_query"
+                                    aria-describedby="error_email"
                                 />
-                                <label for="general"> General Enquiry </label>
-                            </li>
-                            <li class="query__list--item">
-                                <input
-                                    id="support"
-                                    type="radio"
-                                    name="query"
+                                <span class="error invisible" id="error_email"
+                                    >Please enter a valid email address</span
+                                >
+                            </div>
+                            <fieldset>
+                                <legend>
+                                    Query Type
+                                    <span class="required" aria-hidden="true"
+                                        >*</span
+                                    >
+                                    <span class="sr">required</span>
+                                </legend>
+                                <ul class="query__list">
+                                    <li class="query__list--item">
+                                        <input
+                                            id="general"
+                                            type="radio"
+                                            name="query"
+                                            aria-invalid="false"
+                                            aria-describedby="error_query"
+                                        />
+                                        <label for="general">
+                                            General Enquiry
+                                        </label>
+                                    </li>
+                                    <li class="query__list--item">
+                                        <input
+                                            id="support"
+                                            type="radio"
+                                            name="query"
+                                            aria-invalid="false"
+                                            aria-describedby="error_query"
+                                        />
+                                        <label for="support">
+                                            Support Request
+                                        </label>
+                                    </li>
+                                </ul>
+                                <span class="error invisible" id="error_query"
+                                    >Please select a query type</span
+                                >
+                            </fieldset>
+                            <div class="column">
+                                <label for="message"
+                                    >Message
+                                    <span class="required" aria-hidden="true"
+                                        >*</span
+                                    >
+                                    <span class="sr">required</span>
+                                </label>
+                                <textarea
+                                    class="message"
+                                    name="message"
+                                    id="message"
+                                    name="message"
                                     aria-invalid="false"
-                                    aria-describedby="error_query"
-                                />
-                                <label for="support"> Support Request </label>
-                            </li>
-                        </ul>
-                        <span class="error invisible" id="error_query"
-                            >Please select a query type</span
-                        >
-                    </fieldset>
-                    <div class="column">
-                        <label for="message"
-                            >Message
-                            <span class="required" aria-hidden="true">*</span>
-                            <span class="sr">required</span>
-                        </label>
-                        <textarea
-                            name="message"
-                            id="message"
-                            name="message"
-                            aria-invalid="false"
-                            aria-describedby="error_message"
-                        ></textarea>
-                        <span class="error invisible" id="error_message"
-                            >This field is required</span
-                        >
+                                    aria-describedby="error_message"
+                                    resize="none"
+                                ></textarea>
+                                <span class="error invisible" id="error_message"
+                                    >This field is required</span
+                                >
+                            </div>
+                        </div>
                     </div>
                     <div class="column">
                         <div class="consent">
@@ -163,7 +191,12 @@
                             contacted
                         </span>
                     </div>
-                    <input type="submit" value="Submit" />
+                    <input
+                        class="submit"
+                        type="submit"
+                        enterkeyhint="send"
+                        value="Submit"
+                    />
                 </form>
             </section>
         </main>

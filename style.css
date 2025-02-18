@@ -46,7 +46,7 @@ h6 {
     --gray-900: #2a4144;
     --gray-500: #86a2a5;
     --white: #ffffff;
-    --green-500: #0c7d69;
+    --green-600: #0c7d69;
     --green-200: #e0f1e8;
     --red: #d73c3c;
     /* typography */
@@ -80,6 +80,17 @@ section {
     max-width: 690px;
     border-radius: 1rem;
     padding: 1.5rem;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -89,9 +100,9 @@ h1 {
     font: var(--heading);
 }
 
-form {
-    height: 100%;
-    display: flex;
+.content {
+    max-width: 100%;
+    display: grid;
     flex-direction: column;
     gap: 1.5rem;
 }
@@ -103,12 +114,40 @@ form {
 }
 
 .column {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font: var(--body-small);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.required {
+    color: var(--green-600);
+}
+
+input[type=text] {
+    min-width: 0;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font: var(--body-medium);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-500);
 }
 
 fieldset {
     border: none;
+}
+
+legend {
+    font: var(--body-small);
+    display: flex;
+    gap: 0.5rem;
+    margin-block-end: 1rem;
 }
 
 ul {
@@ -119,9 +158,33 @@ ul {
 }
 
 li {
-    border: 1px solid black;
+    border: 1px solid var(--gray-500);
     border-radius: 0.5rem;
     padding: 0.75rem 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.message {
+    resize: none;
+    padding: 0.75rem 1.5rem;
+    height: 15rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-500);
+}
+
+.consent {
+    display: flex;
+    gap: 1rem;
+}
+
+.submit {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font: var(--body-medium-bold);
+    background: var(--green-600);
+    color: var(--white);
 }
 
 footer {
@@ -153,8 +216,13 @@ footer {
     width: 1px;
 }
 
+@media screen and (min-width: 40rem) {
+    .name {
+        flex-direction: row;
+    }
+}
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
     section {
         max-width: 736px;
     }
