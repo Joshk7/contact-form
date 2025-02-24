@@ -13,22 +13,52 @@ const emailRegExp =
 
 const validations = {
     "given-name": (value) => {
-        return !!value.trim();
+        const trimmed = value.trim();
+        if (trimmed === "") {
+            errorGiven.classList.remove("invisible");
+            return false;
+        }
+        return true;
     },
     "family-name": (value) => {
-        return !!value.trim();
+        const trimmed = value.trim();
+        if (trimmed === "") {
+            errorFamily.classList.remove("invisible");
+            return false;
+        }
+        return true;
     },
     email: (value) => {
-        return value.length !== 0 && emailRegExp.test(value);
+        if (value.length !== 0 && emailRegExp.test(value)) {
+            return true;
+        } else {
+            errorEmail.classList.remove("invisible");
+            return false;
+        }
     },
     query: (value) => {
-        return !!value.trim();
+        const trimmed = value.trim();
+        if (trimmed === "") {
+            errorQuery.classList.remove("invisible");
+            return false;
+        }
+        return true;
     },
     message: (value) => {
-        return !!value.trim();
+        const trimmed = value.trim();
+        if (trimmed === "") {
+            errorMessage.classList.remove("invisible");
+            return false;
+        }
+        return true;
     },
     consent: (value) => {
-        return !!value.trim();
+        const trimmed = value.trim();
+        if (trimmed === "") {
+            errorConsent.classList.remove("invisible");
+            return false;
+        }
+        return true;
     },
 };
 
@@ -42,17 +72,19 @@ const errors = {
 };
 
 const validate = (formData) => {
+    let valid = true;
     for (const key in validations) {
         if (!Object.hasOwn(formData, key)) {
-            return false;
-        }
-
-        if (!validations[key](formData[key])) {
-            return false;
+            valid = false;
+            validations[key]("");
+        } else {
+            if (validations[key](formData[key])) {
+                valid = false;
+            }
         }
     }
 
-    return true;
+    return valid;
 };
 
 const handleQueryClick = (e) => {
