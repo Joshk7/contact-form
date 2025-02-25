@@ -1,8 +1,12 @@
 const form = document.querySelector("form");
+const given = document.getElementById("given-name");
 const errorGiven = document.getElementById("error_given");
+const family = document.getElementById("family-name");
 const errorFamily = document.getElementById("error_family");
+const email = document.getElementById("email");
 const errorEmail = document.getElementById("error_email");
 const errorQuery = document.getElementById("error_query");
+const message = document.getElementById("message");
 const errorMessage = document.getElementById("error_message");
 const errorConsent = document.getElementById("error_consent");
 
@@ -16,6 +20,7 @@ const validations = {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorGiven.classList.remove("invisible");
+            given.classList.add("error__outline");
             return false;
         }
         return true;
@@ -24,6 +29,7 @@ const validations = {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorFamily.classList.remove("invisible");
+            family.classList.add("error__outline");
             return false;
         }
         return true;
@@ -33,6 +39,7 @@ const validations = {
             return true;
         } else {
             errorEmail.classList.remove("invisible");
+            email.classList.add("error__outline");
             return false;
         }
     },
@@ -48,6 +55,7 @@ const validations = {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorMessage.classList.remove("invisible");
+            message.classList.add("error__outline");
             return false;
         }
         return true;

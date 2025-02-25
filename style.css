@@ -148,6 +148,9 @@ input[type="text"] {
 
 fieldset {
     border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 legend {
@@ -256,6 +259,15 @@ footer {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.error {
+    font: var(--body-small);
+    color: var(--red);
+}
+
+.error__outline {
+    border: 1px solid var(--red) !important;
 }
 
 .invisible {
