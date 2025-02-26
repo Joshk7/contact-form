@@ -9,8 +9,8 @@ const errorQuery = document.getElementById("error_query");
 const message = document.getElementById("message");
 const errorMessage = document.getElementById("error_message");
 const errorConsent = document.getElementById("error_consent");
-
 const queryItems = form.querySelectorAll(".query__list--item");
+const toast = document.getElementById("toast");
 
 const emailRegExp =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -111,7 +111,7 @@ const validate = (formData) => {
             valid = false;
             validations[key]("");
         } else {
-            if (validations[key](formData[key])) {
+            if (!validations[key](formData[key])) {
                 valid = false;
             }
         }
@@ -132,9 +132,10 @@ const handleFormSubmit = (e) => {
 
     const data = Object.fromEntries(new FormData(form));
     const valid = validate(data);
+    handleSuccess();
     if (valid) {
         // do something with the data.
-        
+        console.log("valid query!");
     }
 };
 
@@ -143,3 +144,11 @@ queryItems.forEach((item) => {
 });
 
 form.addEventListener("submit", handleFormSubmit);
+
+function handleSuccess() {
+    toast.className = "show";
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(() => { 
+        toast.className = toast.className.replace("show", ""); 
+    }, 3000);
+  }
