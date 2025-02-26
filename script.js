@@ -5,9 +5,12 @@ const family = document.getElementById("family-name");
 const errorFamily = document.getElementById("error_family");
 const email = document.getElementById("email");
 const errorEmail = document.getElementById("error_email");
+const general = document.getElementById("general");
+const support = document.getElementById("support");
 const errorQuery = document.getElementById("error_query");
 const message = document.getElementById("message");
 const errorMessage = document.getElementById("error_message");
+const consent = document.getElementById("consent");
 const errorConsent = document.getElementById("error_consent");
 const queryItems = form.querySelectorAll(".query__list--item");
 const toast = document.getElementById("toast");
@@ -132,15 +135,41 @@ const handleFormSubmit = (e) => {
 
     const data = Object.fromEntries(new FormData(form));
     const valid = validate(data);
-    handleSuccess();
     if (valid) {
-        // do something with the data.
-        console.log("valid query!");
+        handleSuccess();
     }
 };
 
+given.addEventListener("input", (e) => {
+    validations["given-name"](e.target.value);
+});
+
+family.addEventListener("input", (e) => {
+    validations["family-name"](e.target.value);
+});
+
+email.addEventListener("input", (e) => {
+    validations["email"](e.target.value);
+});
+
 queryItems.forEach((item) => {
     item.addEventListener("click", handleQueryClick);
+});
+
+general.addEventListener("input", (e) => {
+    validations["query"](e.target.value);
+});
+
+support.addEventListener("input", (e) => {
+    validations["query"](e.target.value);
+});
+
+message.addEventListener("input", (e) => {
+    validations["message"](e.target.value);
+});
+
+consent.addEventListener("input", (e) => {
+    validations["consent"](e.target.value);
 });
 
 form.addEventListener("submit", handleFormSubmit);
