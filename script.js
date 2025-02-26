@@ -21,52 +21,77 @@ const validations = {
         if (trimmed === "") {
             errorGiven.classList.remove("invisible");
             given.classList.add("error__outline");
+            given.ariaInvalid = true;
             return false;
+        } else {
+            errorGiven.classList.add("invisible");
+            given.classList.remove("error__outline");
+            given.ariaInvalid = false;
+            return true;
         }
-        return true;
     },
     "family-name": (value) => {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorFamily.classList.remove("invisible");
             family.classList.add("error__outline");
+            family.ariaInvalid = true;
             return false;
+        } else {
+            errorFamily.classList.add("invisible");
+            family.classList.remove("error__outline");
+            family.ariaInvalid = false;
+            return true;
         }
-        return true;
     },
-    email: (value) => {
+    "email": (value) => {
         if (value.length !== 0 && emailRegExp.test(value)) {
+            errorEmail.classList.add("invisible");
+            email.classList.remove("error__outline");
+            email.ariaInvalid = false;
             return true;
         } else {
             errorEmail.classList.remove("invisible");
             email.classList.add("error__outline");
+            email.ariaInvalid = true;
             return false;
         }
     },
-    query: (value) => {
+    "query": (value) => {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorQuery.classList.remove("invisible");
             return false;
+        } else {
+            errorQuery.classList.add("invisible");
+            return true;
         }
-        return true;
     },
-    message: (value) => {
+    "message": (value) => {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorMessage.classList.remove("invisible");
             message.classList.add("error__outline");
+            message.ariaInvalid = true;
             return false;
+        } else {
+            errorMessage.classList.add("invisible");
+            message.classList.remove("error__outline");
+            message.ariaInvalid = false;
+            return true;
         }
-        return true;
     },
-    consent: (value) => {
+    "consent": (value) => {
         const trimmed = value.trim();
         if (trimmed === "") {
             errorConsent.classList.remove("invisible");
+            consent.ariaInvalid = true;
             return false;
+        } else {
+            errorConsent.classList.add("invisible");
+            consent.ariaInvalid = false;
+            return true;
         }
-        return true;
     },
 };
 
@@ -106,7 +131,11 @@ const handleFormSubmit = (e) => {
     e.preventDefault();
 
     const data = Object.fromEntries(new FormData(form));
-    validate(data);
+    const valid = validate(data);
+    if (valid) {
+        // do something with the data.
+        
+    }
 };
 
 queryItems.forEach((item) => {
