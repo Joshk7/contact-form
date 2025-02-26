@@ -315,17 +315,35 @@ footer {
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #toast {
     visibility: hidden;
-    min-width: 250px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
+    width: calc(100% - 3rem);
+    max-width: 31.25rem;
+    background-color: var(--gray-900);
+    color: var(--white);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
     position: fixed; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     z-index: 1; 
     left: calc(50%);
-    top: 30px; 
-    transform: translateX(-50%);
+    top: 0;
+    transform: translateX(calc(-50% - 1.5rem));
+}
+
+.success {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.success__message {
+    font: var(--body-medium-bold);
+}
+
+.success__description {
+    font: var(--body-small);
+    color: var(--green-200);
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -340,44 +358,36 @@ footer {
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
     from {
-        top: 0;
         opacity: 0;
     }
     to {
-        top: 30px;
         opacity: 1;
     }
 }
 
 @keyframes fadein {
     from {
-        top: 0;
         opacity: 0;
     }
     to {
-        top: 30px;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes fadeout {
     from {
-        top: 30px;
         opacity: 1;
     }
     to {
-        top: 0;
         opacity: 0;
     }
 }
 
 @keyframes fadeout {
     from {
-        top: 30px;
         opacity: 1;
     }
     to {
-        top: 0;
         opacity: 0;
     }
 }
