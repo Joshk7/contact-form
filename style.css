@@ -90,6 +90,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    color: var(--gray-900);
 }
 
 input,
