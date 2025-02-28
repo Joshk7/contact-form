@@ -136,7 +136,27 @@ const handleFormSubmit = (e) => {
     const data = Object.fromEntries(new FormData(form));
     const valid = validate(data);
     if (valid) {
-        handleSuccess();
+        const json = JSON.stringify(data);
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                handleSuccess();
+            } else {
+                console.log(response);
+                handleSuccess();
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 };
 
