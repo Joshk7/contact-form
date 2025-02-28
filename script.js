@@ -149,9 +149,11 @@ const handleFormSubmit = (e) => {
             let json = await response.json();
             if (response.status == 200) {
                 handleSuccess();
+                form.reset();
             } else {
                 console.log(response);
                 handleSuccess();
+                form.reset();
             }
         })
         .catch(error => {
