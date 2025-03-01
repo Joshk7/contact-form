@@ -70,6 +70,8 @@ body {
 }
 
 main {
+    height: 100%;
+    margin-block: auto;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
